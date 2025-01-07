@@ -15,6 +15,8 @@ comp1 = choicedict[comp_choose()]
 final = (player1,comp1)
 finalcheck = {"Computer Wins":[("Rock","Paper"),("Scissors","Rock"),("Paper","Scissors")],"Player Wins":[("Rock","Scissors"),("Scissors","Paper"),("Paper","Rock")]}
 
+print(f"{player1} is chosen by the player")
+print(f"{comp1} is chosen by the computer")
 for result, combination in finalcheck.items():
     if final in combination:
         print(result)
