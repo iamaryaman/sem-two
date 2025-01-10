@@ -1,7 +1,7 @@
 import random
 maindict = {}
 
-def maindictcall():
+def main_dict_call():
     for i in range(1,4*4+1):
         maindict[i]=None
     return None
@@ -35,29 +35,27 @@ def display(mydict):
 
 
 def check(l,LEFTORRIGHT):
-    n = len(l)
-    
-    for i in range(n):
-        for j in range(n):
-            if LEFTORRIGHT == "R":
-                if l[i] == l[j] and l[i] != None and (i != j):
-                    l[j] = l[i]*2
-                    l[i] = None
-            elif LEFTORRIGHT == "L":
-                if l[i] == l[j] and l[i] != None and (i != j):
+    count = 0
+    exe = False
+    for i in range(len(l)): 
+        if i == None:
+            continue
+        for j in range(count,len(l)):
+            if i == j or l[j] == None:
+                continue
+            if l[i] != l[j]:
+                break
+            if l[i] == l[j]:
+                if LEFTORRIGHT == "L":
                     l[i] = l[j]*2
                     l[j] = None
-                    print(i,j)
+                elif LEFTORRIGHT == "R":
+                    l[j] = l[i]*2
+                    l[i] = None
+                exe = True
+        count +=1
+    if exe == False:
+        return "Nothing"
+    else:
+        return l 
 
-
-
-        
-    
-    
-        
-        
-        
-    
-
-    
-# main()
