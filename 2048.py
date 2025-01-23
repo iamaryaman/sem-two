@@ -34,28 +34,43 @@ def display(mydict):
     return l
 
 
-def check(l,LEFTORRIGHT):
+def check(sublist,LEFTORRIGHT):
     count = 0
     exe = False
-    for i in range(len(l)): 
+    for i in range(len(sublist)): 
         if i == None:
             continue
         for j in range(count,len(l)):
-            if i == j or l[j] == None:
+            if i == j or sublist[j] == None:
                 continue
-            if l[i] != l[j]:
+            if sublist[i] != sublist[j]:
                 break
-            if l[i] == l[j]:
+            if sublist[i] == sublist[j]:
                 if LEFTORRIGHT == "L":
-                    l[i] = l[j]*2
-                    l[j] = None
+                    sublist[i] = sublist[j]*2
+                    sublist[j] = None
                 elif LEFTORRIGHT == "R":
-                    l[j] = l[i]*2
-                    l[i] = None
+                    sublist[j] = sublist[i]*2
+                    sublist[i] = None
                 exe = True
         count +=1
     if exe == False:
         return "Nothing"
     else:
-        return l 
+        return sublist
+
+def arraypick(pick,mainlist):
+    if pick.lower() == "l" or pick.lower() == "r":
+        return mainlist
+    else:
+        mainnewlist= []
+        for i in range(0,4):
+            newlist = []
+            for j in range(0,4):
+                newlist.append(mainlist[j][i])
+            mainnewlist.append(newlist)
+        
+        return mainnewlist
+    
+
 
