@@ -40,7 +40,7 @@ def check(sublist,LEFTORRIGHT):
     for i in range(len(sublist)): 
         if i == None:
             continue
-        for j in range(count,len(l)):
+        for j in range(count,len(sublist)):
             if i == j or sublist[j] == None:
                 continue
             if sublist[i] != sublist[j]:
@@ -71,6 +71,8 @@ def arraypick(pick,mainlist):
             mainnewlist.append(newlist)
         
         return mainnewlist
+    
+def move(pick):
     
 
 
